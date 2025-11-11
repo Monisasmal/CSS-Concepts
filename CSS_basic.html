@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS FAQ</title>
+<style>
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f7fbff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    padding: 15px 25px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  header h1 {
+    color: #0077ff;
+    margin: 10px 0;
+  }
+
+  .search-box {
+    text-align: center;
+    margin: 25px auto;
+  }
+
+  .search-box input {
+    width: 60%;
+    max-width: 400px;
+    padding: 10px 15px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .faq {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+
+  .faq h2 {
+    color: #0077ff;
+    font-size: 18px;
+    margin-top: 0;
+  }
+
+  .faq p {
+    margin: 8px 0;
+    line-height: 1.6;
+  }
+
+  pre {
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    margin: 30px 0;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>CSS Basic</h1>
+</header>
+
+
+<main>
+  <section class="faq">
+    <h2>Q1 — What is CSS? Why is it used?</h2>
+    <p>CSS (Cascading Style Sheets) is used to style HTML elements, control layout, colors, fonts, spacing, responsiveness, and enhance user experience.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Q2 — Different types of CSS?</h2>
+    <p>▶ Inline CSS – inside <code>style</code> attribute.<br>
+       ▶ Internal CSS – inside <code>&lt;style&gt;</code> tag.<br>
+       ▶ External CSS – separate <code>.css</code> file linked with <code>&lt;link&gt;</code>.<br>
+       👉 Best practice: external CSS.
+    </p>
+  </section>
+
+  <section class="faq">
+    <h2>Q3 — Difference between id and class?</h2>
+    <p>➡ <b>id:</b> unique, used for only one element.<br>
+       ➡ <b>class:</b> reusable, used for multiple elements.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Q4 — What is the difference between inline, block, and inline-block?</h2>
+    <p>▶ Inline: flows with text (e.g., <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>).<br>
+       ▶ Block: takes full width (e.g., <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>).<br>
+       ▶ Inline-block: inline but accepts width/height.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Q5 — What is the difference between absolute, relative, fixed, and sticky positioning?</h2>
+    <p>➡ <b>Relative:</b> relative to itself.<br>
+       ➡ <b>Absolute:</b> relative to nearest positioned parent.<br>
+       ➡ <b>Fixed:</b> relative to viewport.<br>
+       ➡ <b>Sticky:</b> toggles between relative & fixed.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Q6 — What are pseudo-classes and pseudo-elements?</h2>
+    <p>➡ <b>Pseudo-class:</b> element state (<code>:hover</code>, <code>:first-child</code>).<br>
+       ➡ <b>Pseudo-element:</b> part of element (<code>::before</code>, <code>::after</code>).</p>
+  </section>
+
+  <section class="faq">
+    <h2>Q7 — What is the difference between inline, internal, and external CSS in terms of performance?</h2>
+    <p>▶ Inline: high specificity, poor maintainability.<br>
+       ▶ Internal: works for one page.<br>
+       ▶ External: reusable, cached by browsers (best).</p>
+  </section>
+
+  <section class="faq">
+    <h2>Q8 — What is the difference between absolute and relative URL in CSS?</h2>
+    <p>➡ <b>Absolute:</b> full path/URL.<br>
+       ➡ <b>Relative:</b> relative to current file location.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Q9 — What are CSS frameworks? Give examples.</h2>
+    <p>Pre-written stylesheets/libraries for faster UI. Examples: Bootstrap, Tailwind, Bulma, Foundation.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Q10 — Difference between CSS2 and CSS3?</h2>
+    <p>CSS3 introduced: media queries, flexbox, grid, animations, transitions, <code>border-radius</code>, shadows.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Q11 — Explain CSS cascade.</h2>
+    <p>Cascade decides which styles are applied. Order of importance:<br>
+    ▶ Inline styles<br>
+    ▶ IDs<br>
+    ▶ Classes/pseudo-classes<br>
+    ▶ Elements/pseudo-elements</p>
+  </section>
+
+  <section class="faq">
+    <h2>Q12 — What is the difference between relative units (em, rem, %) and absolute units (px)?</h2>
+    <p>➡ <b>px:</b> fixed.<br>
+       ➡ <b>em:</b> relative to parent font-size.<br>
+       ➡ <b>rem:</b> relative to root font-size.<br>
+       ➡ <b>%:</b> relative to parent container.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Q13 — What is the difference between relative length (vh, vw) and absolute (px)?</h2>
+    <p>▶ <b>vh:</b> viewport height.<br>
+       ▶ <b>vw:</b> viewport width.<br>
+       ▶ <b>px:</b> fixed pixels.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Q14 — What is progressive enhancement vs graceful degradation in CSS?</h2>
+    <p>➡ <b>Progressive enhancement:</b> start with basic CSS, add advanced features.<br>
+       ➡ <b>Graceful degradation:</b> start with full features, ensure fallback for older browsers.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Q15 — What are CSS resets and normalize.css?</h2>
+    <p>▶ <b>Reset.css:</b> removes all default browser styles.<br>
+       ▶ <b>Normalize.css:</b> makes default styles consistent across browsers.</p>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 CSS FAQ Notes
+</footer>
+
+</body>
+</html>
