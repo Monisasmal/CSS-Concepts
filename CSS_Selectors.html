@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Selectors</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f5f9ff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 30px 10px 10px;
+      color: #0077ff;
+      text-transform: uppercase;
+    }
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto 60px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      padding: 20px 30px;
+    }
+    h2 {
+      color: #0077ff;
+      font-size: 1.2rem;
+      margin-top: 25px;
+    }
+    p {
+      margin: 5px 0 10px;
+      line-height: 1.6;
+    }
+    code, pre {
+      background: #f3f3f3;
+      padding: 8px 12px;
+      display: block;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+      color: #d63384;
+      overflow-x: auto;
+    }
+    .search-bar {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .search-bar input {
+      width: 60%;
+      max-width: 400px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      outline: none;
+    }
+    .search-bar input:focus {
+      border-color: #0077ff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CSS Selectors</h1>
+  </header>
+
+
+  <div class="container">
+
+    <h2>Q16 — Different types of CSS selectors?</h2>
+    <p>Universal *, Type p, Class .class, ID #id, Attribute [attr=value], Pseudo-classes, Pseudo-elements, Combinators.</p>
+
+    <h2>Q17 — What are attribute selectors?</h2>
+    <pre>input[type="text"] { color: blue; }</pre>
+
+    <h2>Q18 — Difference between nth-child() and nth-of-type()?</h2>
+    <p>➡ nth-child: based on position among siblings.<br>
+       ➡ nth-of-type: based on position among same type.</p>
+
+    <h2>Q19 — Difference between child (>) and descendant (space) selectors?</h2>
+    <p>▶ div &gt; p: only direct children.<br>
+       ▶ div p: all nested.</p>
+
+    <h2>Q20 — Difference between adjacent sibling (+) and general sibling (~) selectors?</h2>
+    <p>➡ h1 + p: first &lt;p&gt; after &lt;h1&gt;.<br>
+       ➡ h1 ~ p: all &lt;p&gt; after &lt;h1&gt;.</p>
+
+    <h2>Q21 — Difference between pseudo-class :first-child and :first-of-type?</h2>
+    <p>▶ :first-child: first child of parent regardless of type.<br>
+       ▶ :first-of-type: first element of its type.</p>
+
+    <h2>Q22 — Difference between :nth-child(odd) and :nth-of-type(odd)?</h2>
+    <p>➡ nth-child(odd): odd children regardless of tag.<br>
+       ➡ nth-of-type(odd): odd elements of same tag.</p>
+
+    <h2>Q23 — What is :not() selector?</h2>
+    <pre>p:not(.highlight) { color: gray; }</pre>
+
+    <h2>Q24 — Difference between pseudo-class :hover and pseudo-element ::before?</h2>
+    <p>▶ :hover: triggered on mouse hover.<br>
+       ▶ ::before: adds content before element.</p>
+
+    <h2>Q25 — What is specificity hierarchy in CSS selectors?</h2>
+    <p>-- Inline (1000) &gt; ID (100) &gt; Class (10) &gt; Element (1).</p>
+
+    <h2>Q26 — Explain universal selector * in CSS.</h2>
+    <pre>* {
+  margin: 0;
+  padding: 0;
+}</pre>
+
+    <h2>Q27 — Difference between :checked, :disabled, and :enabled selectors?</h2>
+    <p>➡ :checked: for checked inputs.<br>
+       ➡ :disabled: for disabled inputs.<br>
+       ➡ :enabled: for enabled inputs.</p>
+
+    <h2>Q28 — Explain :focus-within.</h2>
+    <p>Applied when an element or its descendants have focus.</p>
+
+    <h2>Q29 — Difference between :root and html selectors?</h2>
+    <p>▶ :root: highest-level element, useful for CSS variables.<br>
+       ▶ html: same as root, but :root has higher specificity.</p>
+
+    <h2>Q30 — Difference between :link, :visited, :hover, and :active?</h2>
+    <p>➡ :link → unvisited links.<br>
+       ➡ :visited → visited links.<br>
+       ➡ :hover → mouse hover.<br>
+       ➡ :active → when clicked.</p>
+
+  </div>
+</body>
+</html>
