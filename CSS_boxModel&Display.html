@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Box Model & Display </title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f5f9ff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 30px 10px 10px;
+      color: #0077ff;
+      text-transform: uppercase;
+    }
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto 60px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      padding: 20px 30px;
+    }
+    h2 {
+      color: #0077ff;
+      font-size: 1.2rem;
+      margin-top: 25px;
+    }
+    p {
+      margin: 5px 0 10px;
+      line-height: 1.6;
+    }
+    code, pre {
+      background: #f3f3f3;
+      padding: 8px 12px;
+      display: block;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+      color: #d63384;
+      overflow-x: auto;
+    }
+    .search-bar {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .search-bar input {
+      width: 60%;
+      max-width: 400px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      outline: none;
+    }
+    .search-bar input:focus {
+      border-color: #0077ff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CSS Box Model & Display</h1>
+  </header>
+
+  <div class="container">
+
+    <h2>Q31 — Explain the CSS Box Model in detail.</h2>
+    <p>Every HTML element is treated as a box, which has:</p>
+    <ul>
+      <li><b>Content</b> → text, images inside the element.</li>
+      <li><b>Padding</b> → space between content & border.</li>
+      <li><b>Border</b> → boundary around padding.</li>
+      <li><b>Margin</b> → space outside the border (separates from neighbors).</li>
+    </ul>
+    <pre>div {
+  width: 200px;
+  padding: 10px;
+  border: 5px solid black;
+  margin: 20px;
+}</pre>
+    <p>📏 <b>Total width</b> = 200 + (10×2) + (5×2) = <b>230px</b>.</p>
+
+    <h2>Q32 — Difference between box-sizing: content-box and border-box?</h2>
+    <p>▶ <b>content-box (default)</b> → width/height include only content. Padding & border add extra space.<br>
+       ▶ <b>border-box</b> → width/height include content + padding + border.</p>
+    <pre>div {
+  width: 200px;
+  box-sizing: border-box;
+}</pre>
+    <p>✔ Ensures consistent layouts.</p>
+
+    <h2>Q33 — What are replaced elements in CSS?</h2>
+    <p>Replaced elements are those whose content is not controlled by CSS but by external resources (browser decides rendering).<br>
+    <b>Examples:</b> &lt;img&gt;, &lt;video&gt;, &lt;input&gt;.</p>
+
+    <h2>Q35 — Difference between display: none and visibility: hidden?</h2>
+    <p>➡ <b>display: none</b> → removes element from DOM flow (no space).<br>
+       ➡ <b>visibility: hidden</b> → hides element but still takes up space.</p>
+
+    <h2>Q36 — Difference between relative length units (em, rem) and absolute (px)?</h2>
+    <p>▶ <b>em</b> → relative to parent font size.<br>
+       ▶ <b>rem</b> → relative to root (html).<br>
+       ▶ <b>px</b> → fixed, absolute.</p>
+
+    <h2>Q38 — Difference between float layout and modern layouts (Flexbox, Grid)?</h2>
+    <p>➡ <b>Float (old method):</b> used for layouts but difficult (clearfix hacks).<br>
+       ➡ <b>Flexbox/Grid (modern):</b> flexible, responsive, no clearfix needed.</p>
+
+    <h2>Q39 — Difference between inline vs inline-block vs block with example?</h2>
+    <pre>span { display: inline; }      /* cannot set width */
+div { display: block; }        /* full width */
+button { display: inline-block; } /* inline but can set width */</pre>
+
+    <h2>Q40 — Difference between min-width, max-width, and width?</h2>
+    <p>➡ <b>width:</b> fixed size.<br>
+       ➡ <b>min-width:</b> smallest allowed size.<br>
+       ➡ <b>max-width:</b> largest allowed size.</p>
+
+  </div>
+</body>
+</html>
