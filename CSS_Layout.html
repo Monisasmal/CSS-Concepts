@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Flexbox & Grid FAQ</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f5f9ff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 30px 10px 10px;
+      color: #0077ff;
+    }
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto 60px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      padding: 20px 30px;
+    }
+    h2 {
+      color: #0077ff;
+      font-size: 1.2rem;
+      margin-top: 25px;
+    }
+    p {
+      margin: 5px 0 10px;
+      line-height: 1.6;
+    }
+    code, pre {
+      background: #f3f3f3;
+      padding: 8px 12px;
+      display: block;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+      color: #d63384;
+      overflow-x: auto;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CSS Flexbox & Grid FAQ</h1>
+  </header>
+
+
+  <div class="container">
+
+    <h2>Q41 — What is Flexbox in CSS?</h2>
+    <p>Flexbox is a 1D layout system for aligning items horizontally or vertically.</p>
+    <pre>.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}</pre>
+
+    <h2>Q42 — Explain main-axis vs cross-axis in Flexbox.</h2>
+    <p>▶ <b>Main-axis</b> → defined by flex-direction (row = horizontal, column = vertical).<br>
+       ▶ <b>Cross-axis</b> → perpendicular to main-axis.</p>
+
+    <h2>Q43 — What are the main properties of Flexbox container?</h2>
+    <ul>
+      <li>flex-direction (row, column)</li>
+      <li>justify-content (main-axis alignment)</li>
+      <li>align-items (cross-axis alignment)</li>
+      <li>flex-wrap (wrap items)</li>
+      <li>align-content (multiple line alignment)</li>
+    </ul>
+
+    <h2>Q44 — What are Flexbox item properties?</h2>
+    <p>▶ <b>flex-grow:</b> how much item expands.<br>
+       ▶ <b>flex-shrink:</b> how much item shrinks.<br>
+       ▶ <b>flex-basis:</b> initial size before grow/shrink.<br>
+       👉 shorthand: <b>flex: grow shrink basis;</b></p>
+
+    <h2>Q45 — Difference between Flexbox and CSS Grid?</h2>
+    <p>➡ <b>Flexbox</b> → 1D layout (row OR column).<br>
+       ➡ <b>Grid</b> → 2D layout (rows AND columns).<br>
+       ➡ Flexbox = content-first. Grid = layout-first.</p>
+
+    <h2>Q46 — What is CSS Grid? Give an example.</h2>
+    <p>CSS Grid is a 2D layout system with rows & columns.</p>
+    <pre>.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 10px;
+}</pre>
+
+    <h2>Q47 — What is difference between explicit grid and implicit grid?</h2>
+    <p>▶ <b>Explicit</b> → defined with grid-template-rows/columns.<br>
+       ▶ <b>Implicit</b> → auto-created when extra items exist.</p>
+
+    <h2>Q48 — What is grid auto-placement?</h2>
+    <p>If items are not assigned to specific cells, grid auto-places them row by row or column by column.</p>
+
+    <h2>Q49 — Difference between absolute positioning and fixed positioning in layouts?</h2>
+    <p>➡ <b>Absolute</b> → relative to parent.<br>
+       ➡ <b>Fixed</b> → relative to viewport.</p>
+
+    <h2>Q50 — Difference between CSS Multi-column layout vs Flexbox vs Grid?</h2>
+    <p>▶ <b>Multi-column (column-count)</b> → like newspaper text.<br>
+       ▶ <b>Flexbox</b> → linear arrangement.<br>
+       ▶ <b>Grid</b> → full 2D control.</p>
+
+  </div>
+</body>
+</html>
