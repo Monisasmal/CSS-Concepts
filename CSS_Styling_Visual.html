@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Styling & Visuals</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f5f9ff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 30px 10px 10px;
+      color: #0077ff;
+    }
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto 60px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      padding: 20px 30px;
+    }
+    h2 {
+      color: #0077ff;
+      font-size: 1.2rem;
+      margin-top: 25px;
+    }
+    p {
+      margin: 5px 0 10px;
+      line-height: 1.6;
+    }
+    code, pre {
+      background: #f3f3f3;
+      padding: 8px 12px;
+      display: block;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+      color: #d63384;
+      overflow-x: auto;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CSS Styling & Visuals</h1>
+  </header>
+
+  
+
+  <div class="container">
+
+    <h2>Q51 — What are the different ways to specify colors in CSS?</h2>
+    <p>CSS supports multiple color formats:</p>
+    <pre>
+I. Named colors → p { color: red; }
+II. Hexadecimal (#RRGGBB) → p { color: #ff0000; }
+III. RGB → p { color: rgb(255, 0, 0); }
+IV. RGBA (with transparency) → p { color: rgba(255, 0, 0, 0.5); }
+V. HSL → p { color: hsl(0, 100%, 50%); }
+VI. HSLA (with transparency) → p { color: hsla(0, 100%, 50%, 0.5); }
+    </pre>
+
+    <h2>Q52 — What is the difference between relative and absolute font sizes?</h2>
+    <p>▶ <b>Relative</b> font sizes adapt based on parent or root size: %, em, rem, vh, vw<br>
+       ▶ <b>Absolute</b> font sizes stay fixed: px, pt, cm<br>
+       ✅ Best practice → Use relative units (rem/em) for accessibility.</p>
+
+    <h2>Q53 — How do you load custom fonts in CSS?</h2>
+    <pre>@font-face {
+  font-family: 'MyFont';
+  src: url('myfont.woff2') format('woff2'),
+       url('myfont.woff') format('woff');
+}
+body { font-family: 'MyFont', sans-serif; }
+<!-- Or using Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    </pre>
+
+    <h2>Q54 — What are text-shadow and box-shadow in CSS?</h2>
+    <pre>Text Shadow:
+h1 { text-shadow: 2px 2px 5px gray; }
+
+Box Shadow:
+div { box-shadow: 5px 5px 15px rgba(0,0,0,0.3); }
+    </pre>
+
+    <h2>Q55 — Difference between opacity and rgba transparency?</h2>
+    <p>➡ <b>Opacity</b> affects the entire element (including children).<br>
+       ➡ <b>RGBA transparency</b> affects only color, not children.</p>
+
+    <h2>Q56 — What are CSS gradients?</h2>
+    <pre>Linear: background: linear-gradient(to right, red, blue);
+Radial: background: radial-gradient(circle, yellow, green);
+Conic: background: conic-gradient(red, yellow, green, blue);
+    </pre>
+
+    <h2>Q58 — How do you use CSS filters?</h2>
+    <pre>img {
+  filter: grayscale(100%) blur(2px) brightness(80%);
+}
+Common filters: blur(), contrast(), sepia(), hue-rotate(), drop-shadow().
+    </pre>
+
+    <h2>Q59 — Difference between transition and animation?</h2>
+    <p>➡ <b>Transition</b> → smooth change triggered by an event.<br>
+       ➡ <b>Animation</b> → runs automatically, can loop infinitely.</p>
+    <pre>button {
+  background: blue;
+  transition: background 0.5s;
+}
+button:hover { background: red; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+div { animation: fadeIn 2s infinite; }
+    </pre>
+
+    <h2>Q60 — What are keyframes in CSS animations?</h2>
+    <pre>@keyframes slide {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(100px); }
+  100% { transform: translateX(0); }
+}
+.box { animation: slide 3s infinite; }
+    </pre>
+
+    <h2>Q61 — How to create a fade-in effect?</h2>
+    <pre>@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.element { animation: fadeIn 2s ease-in-out; }
+    </pre>
+
+    <h2>Q62 — How to create hover effects with transitions?</h2>
+    <pre>.button {
+  background: blue;
+  transition: background 0.3s, transform 0.3s;
+}
+.button:hover {
+  background: red;
+  transform: scale(1.1);
+}
+    </pre>
+
+    <h2>Q63 — Difference between transform: translate() and position: relative?</h2>
+    <p>▶ <b>translate()</b> moves element without affecting layout.<br>
+       ▶ <b>position: relative</b> shifts element but space remains reserved.</p>
+
+    <h2>Q64 — What are CSS clip-paths?</h2>
+    <pre>img { clip-path: circle(50%); }
+div { clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+    </pre>
+
+    <h2>Q65 — Difference between inline SVG styling and CSS background images?</h2>
+    <p>➡ <b>Inline SVG</b> → scalable, stylable (fill, stroke).<br>
+       ➡ <b>Background image</b> → static image, cannot be styled internally.</p>
+
+    <h2>Q66 — How to make gradient-colored text?</h2>
+    <pre>.text {
+  background: linear-gradient(to right, red, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+    </pre>
+
+    <h2>Q67 — What are CSS masks?</h2>
+    <pre>div {
+  mask-image: url(mask-shape.png);
+  mask-repeat: no-repeat;
+  mask-size: cover;
+}
+    </pre>
+
+    <h2>Q68 — What are blend modes?</h2>
+    <pre>img { mix-blend-mode: multiply; }
+Common modes: multiply, screen, overlay, darken, lighten.
+    </pre>
+
+    <h2>Q69 — How to create smooth scrolling?</h2>
+    <pre>html { scroll-behavior: smooth; }</pre>
+
+    <h2>Q70 — What are transition timing functions?</h2>
+    <pre>linear → constant speed
+ease → slow start/end
+ease-in → slow start
+ease-out → slow end
+ease-in-out → slow start & end, fast middle
+
+div { transition: all 2s ease-in-out; }
+    </pre>
+
+  </div>
+</body>
+</html>
