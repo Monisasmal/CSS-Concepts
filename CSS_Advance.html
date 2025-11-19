@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced CSS</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f5f9ff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 30px 10px 10px;
+      color: #0077ff;
+    }
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto 60px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      padding: 20px 30px;
+    }
+    h2 {
+      color: #0077ff;
+      font-size: 1.2rem;
+      margin-top: 25px;
+    }
+    p {
+      margin: 5px 0 10px;
+      line-height: 1.6;
+    }
+    code, pre {
+      background: #f3f3f3;
+      padding: 8px 12px;
+      display: block;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+      color: #d63384;
+      overflow-x: auto;
+    }
+    ul {
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Advanced CSS</h1>
+  </header>
+
+  
+
+  <div class="container">
+
+    <h2>Q71 — What are CSS variables (custom properties)? How do you use them?</h2>
+    <p>CSS variables (custom properties) store reusable values in stylesheets.</p>
+    <pre>:root {
+  --main-color: #0077ff;
+  --padding: 10px;
+}
+button {
+  background: var(--main-color);
+  padding: var(--padding);
+}</pre>
+    <p>✔ They make styles consistent and easier to maintain.</p>
+
+    <h2>Q72 — Difference between CSS variables and SASS/LESS variables?</h2>
+    <p>➡ <b>CSS Variables</b> → live in browser, can change at runtime with JavaScript.<br>
+       ➡ <b>SASS/LESS Variables</b> → processed at compile-time, not dynamic.</p>
+
+    <h2>Q73 — What are CSS preprocessors (SASS, LESS, Stylus)?</h2>
+    <p>They extend CSS with variables, nesting, mixins, and functions.  
+       Compiled into normal CSS before deployment.</p>
+    <pre>$primary: #0077ff;
+body {
+  background: $primary;
+}</pre>
+
+    <h2>Q74 — What is CSS specificity and how is it calculated?</h2>
+    <p>Specificity determines which rule takes precedence.  
+       Calculated as (inline, id, class, element):</p>
+    <ul>
+      <li>Inline styles → highest (1000)</li>
+      <li>ID selectors → (100)</li>
+      <li>Class/pseudo-class/attribute → (10)</li>
+      <li>Element/pseudo-element → (1)</li>
+    </ul>
+
+    <h2>Q75 — Relative vs Absolute vs Fixed positioning (z-index context)</h2>
+    <p>▶ <b>Relative</b> → doesn’t create new stacking context.<br>
+       ▶ <b>Absolute</b> → positioned relative to nearest positioned ancestor.<br>
+       ▶ <b>Fixed</b> → positioned relative to viewport (creates new stacking context).</p>
+
+    <h2>Q76 — What are CSS combinators?</h2>
+    <p>Define relationships between selectors:</p>
+    <ul>
+      <li><b>A B</b> → descendant</li>
+      <li><b>A &gt; B</b> → direct child</li>
+      <li><b>A + B</b> → next sibling</li>
+      <li><b>A ~ B</b> → general sibling</li>
+    </ul>
+
+    <h2>Q77 — What are CSS pseudo-classes like :not(), :nth-child(), :nth-of-type()?</h2>
+    <p>They define special states or patterns.</p>
+    <pre>p:not(.highlight) { color: gray; }
+li:nth-child(2) { color: red; }
+div:nth-of-type(3) { border: 1px solid; }</pre>
+
+    <h2>Q78 — Difference between inline-block, flex, and grid layouts?</h2>
+    <p>➡ <b>inline-block</b> → simple inline boxes with manual spacing.<br>
+       ➡ <b>flex</b> → 1D layout (row or column).<br>
+       ➡ <b>grid</b> → 2D layout (rows + columns).</p>
+
+    <h2>Q79 — How to center an element in CSS?</h2>
+    <pre>/* Using Flexbox */
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}</pre>
+    <pre>/* Using Grid */
+.parent {
+  display: grid;
+  place-items: center;
+}</pre>
+
+    <h2>Q80 — What are CSS logical properties?</h2>
+    <p>They replace directional properties (top/left/right/bottom) with flow-relative ones.</p>
+    <pre>margin-inline-start, padding-block-end</pre>
+
+    <h2>Q81 — Difference between inline, block, inline-block, and flex display?</h2>
+    <ul>
+      <li><b>inline</b> → no width/height control.</li>
+      <li><b>block</b> → takes full width.</li>
+      <li><b>inline-block</b> → inline but can set width.</li>
+      <li><b>flex</b> → flex container.</li>
+    </ul>
+
+    <h2>Q82 — What are CSS shorthand properties? Give examples.</h2>
+    <p>Shorthand combines multiple related properties into one line.</p>
+    <pre>margin: 10px 20px;
+background: #0077ff url(img.jpg) no-repeat;</pre>
+
+    <h2>Q83 — What are CSS transitions? List properties that can be animated.</h2>
+    <p>Transitions animate property changes smoothly over time.</p>
+    <pre>div {
+  transition: background 0.5s, transform 0.3s;
+}</pre>
+    <p>Animatable properties: color, transform, background, opacity, etc.</p>
+
+    <h2>Q84 — How does min-width, max-width, min-height, max-height work?</h2>
+    <p>They restrict element resizing range — controlling its flexibility in responsive layouts.</p>
+
+    <h2>Q85 — What is reflow and repaint in CSS performance?</h2>
+    <ul>
+      <li><b>Reflow:</b> layout recalculation (expensive)</li>
+      <li><b>Repaint:</b> visual update only (cheaper)</li>
+    </ul>
+
+    <h2>Q86 — How to improve CSS performance?</h2>
+    <ul>
+      <li>Use fewer deep selectors</li>
+      <li>Minify and combine files</li>
+      <li>Use GPU-friendly properties (transform, opacity)</li>
+      <li>Limit reflows</li>
+    </ul>
+
+    <h2>Q87 — What is Critical CSS and how do you optimize it?</h2>
+    <p>Critical CSS = essential styles for above-the-fold content.  
+       Load inline or early to render pages faster, delay non-critical CSS.</p>
+
+    <h2>Q88 — Progressive Enhancement vs Graceful Degradation</h2>
+    <p>➡ <b>Progressive Enhancement:</b> Start with basic features, add advanced ones if supported.<br>
+       ➡ <b>Graceful Degradation:</b> Build full experience, ensure it still works in older browsers.</p>
+
+  </div>
+</body>
+</html>
