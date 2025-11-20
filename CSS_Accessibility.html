@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessibility</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f5f9ff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 30px 10px 10px;
+      color: #0077ff;
+    }
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto 60px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      padding: 20px 30px;
+    }
+    h2 {
+      color: #0077ff;
+      font-size: 1.2rem;
+      margin-top: 25px;
+    }
+    p {
+      margin: 5px 0 10px;
+      line-height: 1.6;
+    }
+    code, pre {
+      background: #f3f3f3;
+      padding: 8px 12px;
+      display: block;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+      color: #d63384;
+      overflow-x: auto;
+    }
+    ul {
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Accessibility</h1>
+  </header>
+
+  
+
+  <div class="container">
+
+    <h2>Q91 — How does CSS impact SEO?</h2>
+    <p>CSS doesn’t directly affect SEO, but poor usage can indirectly harm it:</p>
+    <ul>
+      <li>Hidden text using <code>display:none</code> or <code>visibility:hidden</code> may be penalized.</li>
+      <li>Heavy CSS slows page load time, lowering rankings.</li>
+      <li>Responsive design improves mobile SEO performance.</li>
+    </ul>
+    <p>✅ <b>Best Practice:</b> Keep CSS clean, minified, and responsive.</p>
+
+    <h2>Q92 — How do you ensure your CSS is accessible for users with disabilities?</h2>
+    <ul>
+      <li>Use high-contrast colors for readability.</li>
+      <li>Don’t rely only on color to convey meaning.</li>
+      <li>Use relative units (<code>em</code>, <code>rem</code>) for scalability.</li>
+      <li>Ensure visible focus states.</li>
+      <li>Keep semantic HTML intact for screen readers.</li>
+    </ul>
+    <pre>button:focus {
+  outline: 3px solid #000;
+}</pre>
+
+    <h2>Q93 — What are the best practices for responsive typography?</h2>
+    <ul>
+      <li>Use relative units (<code>em</code>, <code>rem</code>, <code>%</code>, <code>vw</code>).</li>
+      <li>Apply fluid typography:</li>
+    </ul>
+    <pre>html {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}</pre>
+    <ul>
+      <li>Maintain line-height 1.4–1.6.</li>
+      <li>Use media queries for fine-tuning.</li>
+    </ul>
+
+    <h2>Q94 — How do you optimize CSS performance in large projects?</h2>
+    <ul>
+      <li>Minify and compress CSS files.</li>
+      <li>Remove unused styles (e.g., PurgeCSS).</li>
+      <li>Use shorthand properties.</li>
+      <li>Load CSS asynchronously (<code>&lt;link rel="preload"&gt;</code>).</li>
+      <li>Use CSS variables to reduce repetition.</li>
+    </ul>
+    <p>✅ Example:</p>
+    <pre>/* Instead of */
+margin-top: 10px;
+margin-right: 10px;
+margin-bottom: 10px;
+margin-left: 10px;
+
+/* Use */
+margin: 10px;</pre>
+
+    <h2>Q95 — Difference between em, rem, %, and vh/vw?</h2>
+    <ul>
+      <li><b>em</b> → relative to parent’s font size.</li>
+      <li><b>rem</b> → relative to root element (html).</li>
+      <li><b>%</b> → relative to parent’s property.</li>
+      <li><b>vh/vw</b> → relative to viewport height/width.</li>
+    </ul>
+    <pre>p { font-size: 1.2em; }
+p { font-size: 1.2rem; }
+div { width: 50%; }
+div { height: 100vh; }</pre>
+
+    <h2>Q96 — What are critical CSS and why are they important?</h2>
+    <p>Critical CSS = essential styles for above-the-fold content, inlined for faster rendering.</p>
+    <pre>&lt;style&gt;
+  body { font-family: Arial; }
+  header { background: #000; color: #fff; }
+&lt;/style&gt;
+&lt;link rel="stylesheet" href="style.css"&gt;</pre>
+    <p>✅ Faster first paint → better performance and SEO.</p>
+
+    <h2>Q97 — What accessibility issues can bad CSS cause?</h2>
+    <ul>
+      <li>Removing focus outlines → keyboard users can’t navigate.</li>
+      <li>Poor color contrast → low readability.</li>
+      <li>Fixed font sizes → break zoom layouts.</li>
+      <li>Incorrect <code>display:none</code> → hides content from screen readers.</li>
+    </ul>
+    <p>✅ Always test using tools like Lighthouse or axe.</p>
+
+    <h2>Q98 — Inline styles vs External CSS vs CSS-in-JS</h2>
+    <ul>
+      <li><b>Inline styles:</b> Quick but not reusable.</li>
+      <li><b>External CSS:</b> Best for performance and caching.</li>
+      <li><b>CSS-in-JS:</b> Great for component-based apps (React, Vue).</li>
+    </ul>
+    <p>✅ <b>Best Practice:</b> Use external CSS for large apps; CSS-in-JS for React projects.</p>
+
+    <h2>Q99 — How to make CSS maintainable in large-scale projects?</h2>
+    <ul>
+      <li>Follow naming conventions (BEM, SMACSS).</li>
+      <li>Break CSS into reusable modules.</li>
+      <li>Use variables for consistency.</li>
+      <li>Document code structure.</li>
+      <li>Avoid deep selectors.</li>
+    </ul>
+    <pre>.card__title { font-size: 1.5rem; }
+.card__button--primary { background: blue; }</pre>
+
+    <h2>Q100 — Common CSS pitfalls and how to avoid them?</h2>
+    <ul>
+      <li>Overusing <code>!important</code> → hard to maintain.</li>
+      <li>Not testing across browsers.</li>
+      <li>Using fixed units (<code>px</code>) → not responsive.</li>
+      <li>Leaving large unused CSS files.</li>
+      <li>Too many nested selectors.</li>
+    </ul>
+    <p>✅ Solution: Use modern CSS, responsive units, and test regularly.</p>
+
+  </div>
+</body>
+</html>
