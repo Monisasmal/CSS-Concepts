@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why & When to Use SCSS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: #0077ff;
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
+    h2 {
+      color: #0077ff;
+      margin-bottom: 10px;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    code {
+      background: #eef3ff;
+      display: block;
+      padding: 12px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      border: 1px solid #dce6ff;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+    .back {
+      margin-top: 25px;
+      display: inline-block;
+      background: #0077ff;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Why & When We Use SCSS</h1>
+    <p>Understand the purpose of SCSS before learning advanced concepts.</p>
+  </header>
+
+  <main class="container">
+
+    <section class="card">
+      <h2>🔥 Why Do We Use SCSS?</h2>
+      <p>SCSS (Sassy CSS) is a CSS preprocessor that adds powerful features to normal CSS. It makes styling easier, cleaner, reusable, and more professional.</p>
+
+      <h3>Key Benefits:</h3>
+      <ul>
+        <li><strong>Variables</strong> → store colors, spacing, fonts</li>
+        <li><strong>Nesting</strong> → write CSS in structured format</li>
+        <li><strong>Mixins</strong> → reusable style blocks</li>
+        <li><strong>Partials</strong> → split styles into files</li>
+        <li><strong>Functions & Loops</strong> → dynamic styling</li>
+        <li><strong>7-1 Architecture</strong> → industry-level folder structure</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>⏳ When Should We Use SCSS?</h2>
+      <ul>
+        <li>When the project is getting <strong>big and complex</strong>.</li>
+        <li>When you want <strong>clean and organized</strong> styles.</li>
+        <li>When multiple developers are working on the same project.</li>
+        <li>When you need <strong>reusable components</strong> (buttons, cards, grids).</li>
+        <li>When you follow <strong>design systems</strong> (colors, spacing, typography).</li>
+        <li>When you want to avoid repeating the same CSS again and again.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>🎯 Real Example: CSS vs SCSS</h2>
+
+      <h3>Without SCSS (Normal CSS):</h3>
+      <code>button {
+  background: #0077ff;
+  padding: 12px 20px;
+  border-radius: 8px;
+}
+
+.primary-btn {
+  background: #0077ff;
+}</code>
+
+      <h3>With SCSS:</h3>
+      <code>// Variables + Reuse
+$blue: #0077ff;
+$btn-radius: 8px;
+
+button {
+  background: $blue;
+  padding: 12px 20px;
+  border-radius: $btn-radius;
+}
+
+.primary-btn {
+  background: $blue;
+}</code>
+
+      <p>👉 Changing <strong>$blue</strong> updates all buttons instantly — this is the power of SCSS.</p>
+    </section>
+
+    <section class="card">
+      <h2>✔ Summary</h2>
+      <ul>
+        <li>Use SCSS when you want clean, scalable styling.</li>
+        <li>Perfect for small to large real-world projects.</li>
+        <li>Helps you work faster and more professionally.</li>
+      </ul>
+    </section>
+
+    <a class="back" href="index.html">← Back to Index</a>
+  </main>
+</body>
+</html>
