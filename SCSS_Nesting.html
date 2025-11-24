@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SCSS Nesting – Card Example</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f5f9;
+    }
+
+    /* Blue Header */
+    header {
+      background: #0077ff;
+      padding: 40px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    /* Content Wrapper */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #0077ff;
+      margin-top: 0;
+    }
+
+    pre {
+      background: #eef4ff;
+      padding: 15px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-size: 14px;
+    }
+
+    /* Styled Card Output */
+    .demo-card {
+      width: 300px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      font-family: Arial, sans-serif;
+      margin-top: 20px;
+    }
+    .demo-card h3 {
+      font-size: 20px;
+      color: #0077ff;
+      margin-bottom: 10px;
+    }
+    .demo-card p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.6;
+    }
+    .demo-card .btn {
+      margin-top: 15px;
+      display: inline-block;
+      padding: 10px 16px;
+      background: #0077ff;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .demo-card .btn:hover {
+      background: #005fcc;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SCSS Nesting</h1>
+  <p>Learn how SCSS nesting helps you write cleaner, structured component-based CSS.</p>
+</header>
+
+<div class="container">
+  <h2>What is SCSS Nesting?</h2>
+  <p>
+    SCSS nesting allows you to write selectors inside their parent selector.
+    This keeps your stylesheet clean and follows the HTML structure naturally.
+  </p>
+
+  <h2>Example (SCSS):</h2>
+  <pre>
+.card {
+  width: 300px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+  h3 {
+    font-size: 20px;
+    color: #0077ff;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 15px;
+    color: #444;
+  }
+
+  .btn {
+    margin-top: 15px;
+    padding: 10px 16px;
+    background: #0077ff;
+    color: #fff;
+
+    &:hover {
+      background: #005fcc;
+    }
+  }
+}
+  </pre>
+
+  <h2>Output Card:</h2>
+  <div class="demo-card">
+    <h3>SCSS Nesting Card</h3>
+    <p>This card is styled using SCSS nesting, making the CSS cleaner and easier to maintain.</p>
+    <a class="btn" href="#">Learn More</a>
+  </div>
+
+  <h2>Why Nesting?</h2>
+  <ul>
+    <li>Cleaner folder-like structure</li>
+    <li>Matches your HTML hierarchy</li>
+    <li>Reduces repeated classnames</li>
+    <li>Makes components easy to maintain</li>
+  </ul>
+</div>
+
+</body>
+</html>
