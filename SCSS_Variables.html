@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SCSS Variables Explained</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: #0077ff;
+      padding: 35px;
+      text-align: center;
+      color: white;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    h2 {
+      color: #0077ff;
+      margin-bottom: 10px;
+    }
+    code {
+      background: #eef3ff;
+      display: block;
+      padding: 12px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      font-size: 14px;
+      border: 1px solid #dce6ff;
+      margin-bottom: 12px;
+    }
+    .back {
+      margin-top: 25px;
+      display: inline-block;
+      background: #0077ff;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SCSS Variables</h1>
+    <p>Learn how variables make styling easier, cleaner, and scalable.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>What are SCSS Variables?</h2>
+      <p>SCSS variables let you store values like colors, fonts, spacing, shadows, and use them throughout your stylesheet. They help maintain consistency and make updates easier.</p>
+
+      <h3>Example:</h3>
+      <code>// SCSS
+$primary-color: #0077ff;
+$spacing: 16px;
+$radius: 10px;
+
+.button {
+  background: $primary-color;
+  padding: $spacing;
+  border-radius: $radius;
+}</code>
+
+      <h3>Output CSS:</h3>
+      <code>/* CSS */
+.button {
+  background: #0077ff;
+  padding: 16px;
+  border-radius: 10px;
+}</code>
+
+      <h3>Why variables are useful?</h3>
+      <ul>
+        <li>Consistent design system</li>
+        <li>Easy updates in one place</li>
+        <li>Avoids repetition</li>
+        <li>Clean and scalable architecture</li>
+      </ul>
+    </section>
+
+    <a class="back" href="index.html">← Back to Index</a>
+  </main>
+</body>
+</html>
