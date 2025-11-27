@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SCSS Variables – Button Example</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f5f9;
+    }
+
+    /* Header */
+    header {
+      background: #0077ff;
+      padding: 40px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #0077ff;
+      margin-top: 0;
+    }
+
+    pre {
+      background: #eef4ff;
+      padding: 15px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-size: 14px;
+    }
+
+    /* Compiled CSS (from SCSS Variables) */
+    .btn-demo {
+      background: #0077ff;
+      padding: 14px 22px;
+      border-radius: 8px;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-demo:hover {
+      background: #005fcc;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SCSS Variables</h1>
+  <p>Using variables to build clean, reusable CSS components.</p>
+</header>
+
+<div class="container">
+  <h2>Create a Button Using SCSS Variables</h2>
+  <p>Variables make styling reusable, maintainable, and easier to update. Here’s how you can build a button using SCSS variables.</p>
+
+  <h2>SCSS Code:</h2>
+  <pre>
+$primary: #0077ff;
+$hover: #005fcc;
+$padding: 14px 22px;
+$radius: 8px;
+$font-size: 16px;
+
+.button {
+  background: $primary;
+  padding: $padding;
+  border-radius: $radius;
+  color: white;
+  border: none;
+  font-size: $font-size;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: $hover;
+  }
+}
+  </pre>
+
+  <h2>Output:</h2>
+  <button class="btn-demo">SCSS Variable Button</button>
+
+  <h2>Why Use Variables?</h2>
+  <ul>
+    <li>Easy updates (change once, affects all components)</li>
+    <li>Consistent UI color scheme</li>
+    <li>Cleaner and more professional styling structure</li>
+  </ul>
+</div>
+
+</body>
+</html>
