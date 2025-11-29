@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SCSS Partials – Folder Structure</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f5f9;
+    }
+
+    header {
+      background: #0077ff;
+      padding: 40px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #0077ff;
+      margin-top: 0;
+    }
+
+    pre {
+      background: #eef4ff;
+      padding: 15px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-size: 14px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SCSS Partials</h1>
+  <p>Understanding partials and organizing your SCSS into a clean folder structure.</p>
+</header>
+
+<div class="container">
+  <h2>What Are SCSS Partials?</h2>
+  <p>
+    SCSS partials are separate <strong>small SCSS files</strong> that store reusable code like variables, mixins, resets, and components.
+    They make your project cleaner and easier to maintain.
+  </p>
+
+  <h2>Why Use Partials?</h2>
+  <ul>
+    <li>Better folder structure</li>
+    <li>Reusable components</li>
+    <li>Easier maintenance on large projects</li>
+    <li>Cleaner separation of concerns</li>
+  </ul>
+
+  <h2>SCSS Folder Structure:</h2>
+  <pre>
+scss/
+│
+├── base/
+│   ├── _reset.scss
+│   ├── _typography.scss
+│
+├── components/
+│   ├── _buttons.scss
+│   ├── _cards.scss
+│
+├── layout/
+│   ├── _header.scss
+│   ├── _footer.scss
+│   ├── _grid.scss
+│
+├── utils/
+│   ├── _variables.scss
+│   ├── _mixins.scss
+│
+└── main.scss   // imported file
+  </pre>
+
+  <h2>Example of Importing Partials:</h2>
+  <pre>
+// main.scss
+@import "utils/variables";
+@import "utils/mixins";
+@import "base/reset";
+@import "components/buttons";
+  </pre>
+
+  <h2>Example Partial Code:</h2>
+  <pre>
+// _variables.scss
+$primary: #0077ff;
+$radius: 10px;
+
+// _buttons.scss
+.button {
+  background: $primary;
+  padding: 12px 20px;
+  border-radius: $radius;
+  color: #fff;
+}
+  </pre>
+
+</div>
+
+</body>
+</html>
