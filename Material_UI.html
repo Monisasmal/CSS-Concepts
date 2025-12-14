@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MUI Interview Q&A</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background: #ffffff;
+padding: 20px;
+color: #000;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+h1 {
+text-align: center;
+color: #0077ff;
+margin-bottom: 30px;
+}
+.card {
+background: #fff;
+border-radius: 12px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+padding: 20px;
+margin-bottom: 20px;
+border-left: 5px solid #0077ff;
+width:70%;
+}
+h2 {
+color: #0077ff;
+margin-top: 0;
+}
+code {
+background: #f1f1f1;
+display: block;
+padding: 10px;
+border-radius: 8px;
+margin-top: 10px;
+font-size: 14px;
+
+}
+</style>
+</head>
+<body>
+
+
+<h1>Material UI — Simple Interview Q&A</h1>
+
+<div class="card">
+<h2>1. What is Material UI?</h2>
+<p>MUI is a React UI library that provides ready‑made components like buttons, inputs, cards, etc.</p>
+<code>
+import Button from "@mui/material/Button";<br><br>
+export default function App() {<br>
+ return &lt;Button variant="contained"&gt;Click Me&lt;/Button&gt;;<br>
+}
+</code>
+</div>
+
+
+<div class="card">
+<h2>2. Why do we use Material UI?</h2>
+<p>To create UI faster, look professional, responsive, and avoid writing long CSS.</p>
+<code>&lt;TextField label="Email" variant="outlined" /&gt;</code>
+</div>
+
+
+<div class="card">
+<h2>3. How to install MUI?</h2>
+<code>npm install @mui/material @emotion/react @emotion/styled</code>
+</div>
+
+<div class="card">
+<h2>4. What is the Button component?</h2>
+<p>MUI gives different button styles using <b>variant</b> and <b>color</b>.</p>
+<code>
+&lt;Button variant="contained"&gt;Submit&lt;/Button&gt;<br>
+&lt;Button variant="outlined" color="secondary"&gt;Cancel&lt;/Button&gt;<br>
+&lt;Button variant="text" color="error"&gt;Delete&lt;/Button&gt;
+</code>
+</div>
+
+
+<div class="card">
+<h2>5. What is the sx prop?</h2>
+<p>It allows quick inline styling inside MUI components.</p>
+<code>
+&lt;Button sx={{ backgroundColor: "green", padding: "10px" }}&gt;Save&lt;/Button&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>6. What is Box?</h2>
+<p>import Box from "@mui/material/Box";</p>
+<p>A layout container used for spacing, padding, margin, flex, etc.</p>
+<code>
+&lt;Box sx={{ p: 2, backgroundColor: "#eee" }}&gt;Box Container&lt;/Box&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>7. What is Grid?</h2>
+<p>Used to make responsive layouts using a 12‑column system.</p>
+<p>import Grid from "@mui/material/Grid";</p>
+<code>
+&lt;Grid container spacing={2}&gt;<br>
+ &lt;Grid item xs={6}&gt;Left&lt;/Grid&gt;<br>
+ &lt;Grid item xs={6}&gt;Right&lt;/Grid&gt;<br>
+&lt;/Grid&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>8. What is TextField?</h2>
+<p>An input component with built‑in design and label.</p>
+<code>&lt;TextField label="Username" fullWidth /&gt;</code>
+</div>
+
+<div class="card">
+<h2>9. What is ThemeProvider?</h2>
+<p>Used to set global colors, fonts, and theme settings for the whole app.</p>
+<code>
+const theme = createTheme({ palette: { primary: { main: "#1976d2" }}});<br><br>
+&lt;ThemeProvider theme={theme}&gt;<br>
+ &lt;Button&gt;Click&lt;/Button&gt;<br>
+&lt;/ThemeProvider&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>10. What is AppBar?</h2>
+<p>Used to create top navigation bars.</p>
+<code>
+&lt;AppBar position="static" &gt;<br>
+ &lt;Toolbar&gt;My App&lt;/Toolbar&gt;<br>
+&lt;/AppBar&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>11. How to use MUI Icons?</h2>
+<code>
+import HomeIcon from "@mui/icons-material/Home";<br><br>
+&lt;HomeIcon /&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>12. What is Card?</h2>
+<p>CardContent is a Material UI component that provides padding, spacing, and layout for the inside section of a Card.</p>
+<code>
+&lt;Card&gt;<br>
+ &lt;CardContent&gt;Title&lt;/CardContent&gt;<br>
+&lt;/Card&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>13. How to customize MUI Button using styled()?</h2>
+<p>You can create custom styled components using MUI’s <b>styled()</b> API.</p>
+<code>
+import { styled } from "@mui/material/styles";
+import Button from "@mui/material/Button";<br><br>
+const MyButton = styled(Button)({<br>
+backgroundColor: "#0077ff",<br>
+padding: "10px 25px",<br>
+borderRadius: "10px",<br>
+});<br><br>
+&lt;MyButton&gt;Custom Button&lt;/MyButton&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>14. How to create a responsive layout using MUI Grid?</h2>
+<p>Grid can change its size based on breakpoints.</p>
+<code>
+&lt;Grid container spacing={2}&gt;<br>
+ &lt;Grid item xs={12} sm={6} md={4}&gt;Card 1&lt;/Grid&gt;<br>
+ &lt;Grid item xs={12} sm={6} md={4}&gt;Card 2&lt;/Grid&gt;<br>
+ &lt;Grid item xs={12} sm={6} md={4}&gt;Card 3&lt;/Grid&gt;<br>
+&lt;/Grid&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>15. How to create a Dialog (Popup) in MUI?</h2>
+<p>Dialog is used for popups and modals.</p>
+<code>
+const [open, setOpen] = useState(false);<br><br>
+&lt;Button onClick={() => setOpen(true)}&gt;Open Dialog&lt;/Button&gt;<br><br>
+&lt;Dialog open={open} onClose={() => setOpen(false)}&gt;<br>
+ &lt;DialogTitle&gt;Alert&lt;/DialogTitle&gt;<br>
+ &lt;DialogContent&gt;This is a popup.&lt;/DialogContent&gt;<br>
+&lt;/Dialog&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>16. How to use Flexbox with MUI Box?</h2>
+<p>MUI Box supports flexbox properties directly with sx.</p>
+<code>
+&lt;Box sx={{ display: "flex", gap: 2 }}&gt;<br>
+ &lt;Button variant="contained"&gt;One&lt;/Button&gt;<br>
+ &lt;Button variant="contained"&gt;Two&lt;/Button&gt;<br>
+&lt;/Box&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>17. How to create a custom theme color?</h2>
+<p>MUI allows you to add your own color palette.</p>
+<code>
+import { ThemeProvider, createTheme } from "@mui/material/styles";<br>
+import Button from "@mui/material/Button";<br><br>
+
+const theme = createTheme({<br>
+&nbsp;&nbsp;palette: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;myBlue: { main: "#0077ff" }<br>
+&nbsp;&nbsp;}<br>
+});<br><br>
+
+&lt;ThemeProvider theme={theme}&gt;<br>
+&nbsp;&nbsp;&lt;Button color="myBlue" variant="contained"&gt;Blue&lt;/Button&gt;<br>
+&lt;/ThemeProvider&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>18. How to add icons inside Buttons?</h2>
+<p>MUI icons can be placed inside buttons using startIcon or endIcon.</p>
+<code>
+import SendIcon from "@mui/icons-material/Send";<br><br>
+&lt;Button variant="contained" endIcon={<SendIcon />} &gt;<br>
+ Send<br>
+&lt;/Button&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>19. How to create a Card with an Image?</h2>
+<p>CardMedia helps display images inside a Card.</p>
+<code>
+&lt;Card sx={{ maxWidth: 300 }}&gt;<br>
+ &lt;CardMedia<br>
+  component="img"<br>
+  height="160"<br>
+  image="https://via.placeholder.com/300"<br>
+ /&gt;<br>
+ &lt;CardContent&gt;Sample Image Card&lt;/CardContent&gt;<br>
+&lt;/Card&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>20. How to create a simple Navbar with AppBar?</h2>
+<p>AppBar and Toolbar help create a clean navigation bar.</p>
+<code>
+&lt;AppBar position="static"&gt;<br>
+ &lt;Toolbar sx={{ display: "flex", justifyContent: "space-between" }}&gt;<br>
+  Logo<br>
+  &lt;Button color="inherit"&gt;Login&lt;/Button&gt;<br>
+ &lt;/Toolbar&gt;<br>
+&lt;/AppBar&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>21. What are MUI Breakpoints?</h2>
+<p>Breakpoints help create responsive designs for mobile, tablet, and desktop using preset sizes like xs, sm, md, lg, xl.</p>
+<code>
+&lt;Box sx={{ width: { xs: "100%", sm: "70%", md: "50%" } }}&gt;<br>
+ Responsive Box<br>
+&lt;/Box&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>22. What is useTheme() in MUI?</h2>
+<p>useTheme() lets you access the current theme inside components.</p>
+<code>
+const theme = useTheme();<br><br>
+&lt;Box sx={{ color: theme.palette.primary.main }}&gt;<br>
+ Themed Text<br>
+&lt;/Box&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>23. What is responsive Typography?</h2>
+<p>MUI allows text to scale automatically based on screen size.</p>
+<code>
+&lt;Typography variant="h4" sx={{ fontSize: { xs: "20px", md: "32px" } }}&gt;<br>
+ Responsive Heading<br>
+&lt;/Typography&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>24. How to override default MUI component styles?</h2>
+<p>You can override default styles using theme.components.</p>
+<code>
+const theme = createTheme({<br>
+ components: {<br>
+  MuiButton: {<br>
+   styleOverrides: {<br>
+    root: { borderRadius: "12px" }<br>
+   }<br>
+  }<br>
+ }<br>
+});
+</code>
+</div>
+
+<div class="card">
+<h2>25. What is Stack in MUI?</h2>
+<p>Stack is used to arrange items vertically or horizontally with spacing.</p>
+<code>
+&lt;Stack direction="row" spacing={2}&gt;<br>
+ &lt;Button&gt;One&lt;/Button&gt;<br>
+ &lt;Button&gt;Two&lt;/Button&gt;<br>
+&lt;/Stack&gt;
+</code>
+</div>
+
+<div class="card">
+<h2>26. How to create Tabs in MUI?</h2>
+<p>Tabs help switch between multiple views.</p>
+<code>
+const [value, setValue] = useState(0);<br><br>
+&lt;Tabs value={value} onChange={(e, v) => setValue(v)}&gt;<br>
+ &lt;Tab label="Home" /&gt;<br>
+ &lt;Tab label="Profile" /&gt;<br>
+&lt;/Tabs&gt;
+</code>
+</div>
+
+</body>
+</html>
